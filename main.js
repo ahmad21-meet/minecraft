@@ -67,16 +67,16 @@ function fillCells(){
 
 
 function fillRock(i,j,k){
-   if(i<=Math.floor(gridRowCount*0.75)&&i>Math.floor(gridRowCount*0.4)&&j>=Math.floor(gridColumnCount*0.45)&&j<Math.floor(gridColumnCount*0.6)&&i!=9){
+   if(i<=Math.floor(gridRowCount*0.75)&&i>Math.floor(gridRowCount*0.1)&&j>=Math.floor(gridColumnCount*0.3)&&j<Math.floor(gridColumnCount*0.6)&&i!=4){
       container.children[k].classList.add(inventory.rock);
    }
-   if(i==7&&j<4){
+   if(i==7&&j<7){
       container.children[k].classList.add(inventory.rock);
    }
-   if(i==6&&j<3){
+   if(i==6&&j<10){
       container.children[k].classList.add(inventory.rock);
    }
-   if(i==5&&j<2){
+   if(i==5&&j<3){
       container.children[k].classList.add(inventory.rock);
    }
    if(i==4&&j<1){
@@ -84,25 +84,25 @@ function fillRock(i,j,k){
    }
 }
 function fillLeaves(i,j,k){
-   if( i>Math.floor(gridRowCount*0.1)+1&&i<Math.floor(gridRowCount*0.4)&& j>Math.floor(gridColumnCount*0.6)&&j<Math.floor(gridColumnCount*0.9)){
+   if( i>Math.floor(gridRowCount*0.1)+1&&i<Math.floor(gridRowCount*0.3)&& j>Math.floor(gridColumnCount*0.4)&&j<Math.floor(gridColumnCount*0.3)){
       container.children[k].classList.add(inventory.leaves);
       
    }
-   if(i==2&&j>14&&j<18){
+   if(i==2&&j>12&&j<20){
       container.children[k].classList.add(inventory.leaves);
    }
-   if(i==1&&j==16){
+   if(i==7&&j==17){
       container.children[k].classList.add(inventory.leaves);
    }
 }
 function fillwood(i,j,k){
-   if(i<=Math.floor(gridRowCount*0.75)-1&&i>=Math.floor(gridRowCount*0.4)&&j>=Math.floor(gridColumnCount*0.75)&&j<Math.floor(gridColumnCount*0.75)+1){
+   if(i<=Math.floor(gridRowCount*0.85)-1&&i>=Math.floor(gridRowCount*0.3)&&j>=Math.floor(gridColumnCount*0.25)&&j<Math.floor(gridColumnCount*0.25)+2){
       container.children[k].classList.add(inventory.wood);
    }
    
 }
 function fillGrass(i,j,k){
-   if(i==Math.floor(gridRowCount*0.75)){
+   if(i==Math.floor(gridRowCount*0.25)){
       container.children[k].classList.add(inventory.grass);
    }
    else if(i> Math.floor(gridRowCount*0.75)){
@@ -264,7 +264,7 @@ function axePickUp(element){
 
 function clickedShovelFunc(){
    inventory.materials.forEach(element=>{
-      element.style.borderColor='#ccc'
+      element.style.borderColor='yellow'
    });
    inventory.currentTool='shovel';
    shovel.style.borderColor = 'crimson'
